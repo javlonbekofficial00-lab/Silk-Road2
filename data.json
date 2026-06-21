@@ -1,0 +1,20 @@
+﻿{
+    "messages":  [
+                     {
+                         "email":  "recruiter@hire.me",
+                         "message":  "Hello Alex! Let\u0027s schedule an interview.",
+                         "timestamp":  "2026-06-21 01:27:41",
+                         "name":  "Test Recruiter",
+                         "id":  "5fb69f88-9e0a-4b87-811f-41fd4f192b5d"
+                     },
+                     {
+                         "email":  "javlobjhbvjnv@gmail.com",
+                         "message":  "fdsffsfsdf",
+                         "timestamp":  "2026-06-21 01:48:39",
+                         "name":  "edsfnjsdfsf",
+                         "id":  "fe4c6c5f-ad11-4b9d-a22d-0ae1b3cebb4d"
+                     }
+                 ],
+    "views":  4,
+    "interactions":  8
+}

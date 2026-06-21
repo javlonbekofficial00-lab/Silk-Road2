@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio | Intelligent Full-Stack Engineer</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to my intelligent full-stack developer portfolio. Featuring interactive experiences, a recruiter recommendation engine, and an AI chat clone.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Canvas Particle Background -->
+    <canvas id="canvas-particles"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">DevIntell</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#recruiter-tool" class="nav-link">Matching Engine</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#dashboard" class="nav-link">Live Stats</a>
+                <a href="#contact" class="nav-link btn-contact">Get in Touch</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="glowing-badge"><span class="pulse-dot"></span> Available for Hire</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="text-gradient">Javlonbek Jabborov</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    Full-Stack Engineer building <span id="typed-text" class="typed-text"></span><span class="typed-cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Crafting highly aesthetic frontend user experiences backed by robust, scalable server architectures. Explore my interactive developer portfolio powered by a native API backend.
+                </p>
+                <div class="hero-actions">
+                    <a href="#recruiter-tool" class="btn btn-primary">Try Matching Engine</a>
+                    <a href="#projects" class="btn btn-secondary">View Showcase</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="sphere-container">
+                    <div class="glowing-sphere"></div>
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About Section">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <h3>My Philosophy</h3>
+                    <p>
+                        I believe that great software lives at the intersection of stunning design and rock-solid engineering. Coding isn't just about making things work; it's about creating intuitive digital spaces that leave a lasting impression.
+                    </p>
+                    <p>
+                        With expertise spanning client-side visual design, responsive layouts, API development, database optimization, and native automation scripts, I enjoy building tools that solve actual problems.
+                    </p>
+                </div>
+                <div class="skills-card glass-card">
+                    <h3>Core Competencies</h3>
+                    <div class="skills-group" id="skills-group">
+                        <div class="skill-category" data-category="frontend">
+                            <h4>Frontend</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag" id="skill-js">JavaScript (ES6+)</span>
+                                <span class="skill-tag" id="skill-react">React.js</span>
+                                <span class="skill-tag" id="skill-next">Next.js</span>
+                                <span class="skill-tag" id="skill-css">CSS3 / Flexbox / Grid</span>
+                                <span class="skill-tag" id="skill-canvas">HTML5 Canvas API</span>
+                            </div>
+                        </div>
+                        <div class="skill-category" data-category="backend">
+                            <h4>Backend & Scripts</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag" id="skill-node">Node.js / Express</span>
+                                <span class="skill-tag" id="skill-python">Python / Flask</span>
+                                <span class="skill-tag" id="skill-powershell">PowerShell API Server</span>
+                                <span class="skill-tag" id="skill-sql">SQL / Databases</span>
+                                <span class="skill-tag" id="skill-git">Git / Version Control</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiter Matching Engine -->
+        <section id="recruiter-tool" class="section recruiter-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recruiter Matching Engine</h2>
+                    <p class="section-subtitle">Select what you are looking for in your next hire to dynamically align my profile</p>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="recruiter-card glass-card">
+                    <div class="recruiter-options">
+                        <button class="quiz-btn" data-role="fullstack">
+                            <i class="fa-solid fa-layer-group"></i> Full-Stack Generalist
+                        </button>
+                        <button class="quiz-btn" data-role="backend">
+                            <i class="fa-solid fa-server"></i> Backend & Automation Specialist
+                        </button>
+                        <button class="quiz-btn" data-role="frontend">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Frontend & Visual Developer
+                        </button>
+                    </div>
+                    <div class="quiz-result-placeholder" id="quiz-result">
+                        <div class="placeholder-content">
+                            <i class="fa-solid fa-circle-info pulse-icon"></i>
+                            <p>Click a button above to filter skills, experience, and highlight matching projects instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section container">
+            <div class="section-header">
+                <h2 class="section-title">Projects Showcase</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card" data-tags="backend fullstack">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <span class="project-category">Full-Stack</span>
+                    </div>
+                    <h3 class="project-title">DevSpace Analytics</h3>
+                    <p class="project-desc">A deep analytics platform dashboard tracking server requests and frontend user activities, utilizing custom database storage.</p>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>SQLite</span>
+                        <span>Chart.js</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass-card" data-tags="backend">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-server"></i></div>
+                        <span class="project-category">System Scripting</span>
+                    </div>
+                    <h3 class="project-title">PowerServer Core</h3>
+                    <p class="project-desc">A fully-featured HTTP listener backend core written natively to serve static assets, process webhooks, and map REST endpoints.</p>
+                    <div class="project-tech">
+                        <span>PowerShell</span>
+                        <span>REST API</span>
+                        <span>JSON DB</span>
+                        <span>System.Net</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card glass-card" data-tags="frontend fullstack">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <span class="project-category">Frontend Visual</span>
+                    </div>
+                    <h3 class="project-title">RetroSynth Canvas</h3>
+                    <p class="project-desc">Interactive physics-based particle system simulating real-time audio frequencies with colorful rendering overlays.</p>
+                    <div class="project-tech">
+                        <span>HTML5 Canvas</span>
+                        <span>Web Audio</span>
+                        <span>JavaScript</span>
+                        <span>CSS Variables</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Career Timeline</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="timeline-container">
+                    <!-- Item 1 -->
+                    <div class="timeline-item left" data-roles="fullstack backend">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2024 - Present</span>
+                            <h3 class="timeline-title">Lead Software Engineer</h3>
+                            <h4 class="timeline-org">NexTech Systems</h4>
+                            <p>Leading backend system architecture design. Built Express and PowerShell microservices that cut server latency by 20%. Spearheaded migrating static dashboards to dynamic React portals.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="timeline-item right" data-roles="backend">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2022 - 2024</span>
+                            <h3 class="timeline-title">Backend Developer</h3>
+                            <h4 class="timeline-org">DataPulse Labs</h4>
+                            <p>Created automation scripting suites, designed database schemas, and structured secure REST routes. Optimized SQL query performance, decreasing database load by 35%.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="timeline-item left" data-roles="frontend fullstack">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2020 - 2022</span>
+                            <h3 class="timeline-title">Frontend Engineer</h3>
+                            <h4 class="timeline-org">PixelPerfect Agency</h4>
+                            <p>Crafted pixel-perfect responsive landing pages. Designed custom vector graphics, integrated interactive Canvas animations, and implemented UX patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Server Analytics Dashboard Section -->
+        <section id="dashboard" class="section container">
+            <div class="section-header">
+                <h2 class="section-title">Live Analytics (Powered by Server Backend)</h2>
+                <p class="section-subtitle">Real-time metrics parsed directly from the server database</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="dashboard-grid">
+                <!-- Stat Card 1 -->
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class="fa-solid fa-eye text-cyan"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-views">--</h3>
+                        <p>Total Page Views</p>
+                    </div>
+                    <div class="stat-progress">
+                        <div class="progress-bar cyan-bar" id="views-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class="fa-solid fa-bolt text-magenta"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-interactions">--</h3>
+                        <p>AI Chat & Click Interactions</p>
+                    </div>
+                    <div class="stat-progress">
+                        <div class="progress-bar magenta-bar" id="interactions-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class="fa-solid fa-envelope text-violet"></i></div>
+                    <div class="stat-info">
+                        <h3 id="stat-messages">--</h3>
+                        <p>Contact Messages Received</p>
+                    </div>
+                    <div class="stat-progress">
+                        <div class="progress-bar violet-bar" id="messages-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-card glass-card">
+                    <h3>Contact Information</h3>
+                    <p>Have an interesting project or position? I'd love to chat. Fill out the form or reach out through my other digital channels.</p>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>developer@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Available Globally (Remote)</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-card glass-card">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="text" id="form-name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" id="form-email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" required rows="5" placeholder="Let's build something beautiful together..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+                            <span id="submit-text">Send Message</span>
+                            <span id="submit-spinner" class="spinner hidden"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                        </button>
+                    </form>
+                    <div id="form-feedback" class="form-feedback hidden"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Javlonbek Jabborov. All rights reserved. Powered by a Custom Native PowerShell Server.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive AI Clone Chatbot Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-trigger" id="chat-trigger" aria-label="Open AI Assistant">
+            <i class="fa-solid fa-comments"></i>
+            <span class="chat-notification pulse-badge">1</span>
+        </button>
+        <div class="chat-container glass-card" id="chat-container">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                        <span class="online-indicator"></span>
+                    </div>
+                    <div>
+                        <h4>AI Assistant</h4>
+                        <span class="bot-status">Online • Ask me anything!</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chat-close" aria-label="Close Chat">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi! I am Javlonbek Jabborov's virtual clone. Ask me about his <b>skills</b>, <b>projects</b>, <b>experience</b>, or how to <b>contact</b> him!
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="canvas-bg.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
